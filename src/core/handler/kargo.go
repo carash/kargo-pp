@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/carash/kargo-pp/src/core/class/bid"
 	"github.com/carash/kargo-pp/src/core/class/job"
 	"github.com/carash/kargo-pp/src/core/kargo"
 	"github.com/gin-gonic/gin"
@@ -64,4 +65,52 @@ func (k *KargoHandler) HandleGetJob(c *gin.Context) {
 	return
 }
 
-func (k *KargoHandler) HandleGetBid(c *gin.Context) {}
+type BidResponse struct {
+	ErrorCode int       `json:"err_code,omitempty"`
+	ErrorMsg  string    `json:"err_msg,omitempty"`
+	Bids      []bid.Bid `json:"bids,omitempty"`
+}
+
+func (k *KargoHandler) HandleGetBid(c *gin.Context) {
+	var statusCode int = http.StatusOK
+	var errcode int
+	var errmsg string
+	var bids []bid.Bid
+	defer func() {
+		data := BidResponse{
+			ErrorCode: errcode,
+			ErrorMsg:  errmsg,
+			Bids:      bids,
+		}
+
+		s, _ := json.Marshal(data)
+		c.Data(statusCode, "application/json", s)
+	}()
+
+	uidString, ok := c.GetQuery("user_id")
+	if !ok {
+		statusCode = http.StatusBadRequest
+		errcode = 1
+		errmsg = "need user id"
+		return
+	}
+
+	uid, err := strconv.Atoi(uidString)
+	if err != nil {
+		statusCode = http.StatusBadRequest
+		errcode = 2
+		errmsg = "user id must be int"
+		return
+	}
+
+	b, err := k.KargoController.GetBid(kargo.BidParam{UserID: uid})
+	if err != nil {
+		statusCode = http.StatusInternalServerError
+		errcode = 3
+		errmsg = "error retrieving bids"
+		return
+	}
+
+	bids = b
+	return
+}
