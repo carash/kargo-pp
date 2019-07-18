@@ -1,11 +1,11 @@
-#Dev Plan
+# Dev Plan
 
-###Setup
+### Setup
 - Golang environment
 - Dependencies
 	- gin
 
-###Stubs
+### Stubs
 
 Stubs to Create
 - Router
@@ -14,7 +14,7 @@ Stubs to Create
 - Sort util
 - SQL Wrapper (dummy only)
 
-###Test
+### Test
 
 Create tests (with negative test case?)
 - Handler
@@ -22,7 +22,7 @@ Create tests (with negative test case?)
 - Sort util
 - SQL Wrapper
 
-###Implement
+### Implement
 
 Implement stubs according to tests
 - Router
