@@ -38,6 +38,6 @@ type Location struct {
 	Code string
 }
 
-func (v Location) Less(o Location) bool {
-	return true
+func (l Location) Less(o Location) bool {
+	return l.Name < o.Name
 }
