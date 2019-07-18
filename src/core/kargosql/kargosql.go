@@ -51,28 +51,28 @@ func Connect() *KargoSQL {
 			Origin:   &locs[0],
 			Dest:     &locs[1],
 			Budget:   100,
-			Shipment: now.Add(1000),
+			Shipment: now.Add(1000 * 1e12),
 		},
 		job.Job{
 			User:     &users[0],
 			Origin:   &locs[1],
 			Dest:     &locs[0],
 			Budget:   200,
-			Shipment: now.Add(2000),
+			Shipment: now.Add(2000 * 1e12),
 		},
 		job.Job{
 			User:     &users[1],
 			Origin:   &locs[1],
 			Dest:     &locs[2],
 			Budget:   125,
-			Shipment: now.Add(2000),
+			Shipment: now.Add(2000 * 1e12),
 		},
 		job.Job{
 			User:     &users[1],
 			Origin:   &locs[2],
 			Dest:     &locs[0],
 			Budget:   273,
-			Shipment: now.Add(500),
+			Shipment: now.Add(500 * 1e12),
 		},
 	}
 
