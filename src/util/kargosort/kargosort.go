@@ -1,4 +1,4 @@
 package kargosort
 
-func Sort(arr interface{}, less func(interface{}, interface{}) bool) {
+func Sort(arr interface{}, less func(i, j int) bool) {
 }
