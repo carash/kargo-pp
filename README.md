@@ -18,7 +18,7 @@ Stubs to Create
 ### Test
 
 Create tests (with negative test case?)
-- [ ] Entities w/ functions
+- [x] Entities w/ functions
 - [ ] Handler
 - [ ] Controller
 - [ ] Sort util
