@@ -18,10 +18,10 @@ func TestBidLessPrice(t *testing.T) {
 		},
 		[2]Bid{
 			Bid{
-				Price: 243,
+				Price: 928,
 			},
 			Bid{
-				Price: 928,
+				Price: 243,
 			},
 		},
 		[2]Bid{
