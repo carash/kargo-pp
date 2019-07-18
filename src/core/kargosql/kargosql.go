@@ -6,6 +6,8 @@ import (
 )
 
 type KargoSQL struct {
+	Bids []bid.Bid
+	Jobs []job.Job
 }
 
 func Connect() *KargoSQL {

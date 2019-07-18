@@ -3,9 +3,11 @@ package kargo
 import (
 	"github.com/carash/kargo-pp/src/core/class/bid"
 	"github.com/carash/kargo-pp/src/core/class/job"
+	"github.com/carash/kargo-pp/src/core/kargosql"
 )
 
 type Kargo struct {
+	SQLConn *kargosql.KargoSQL
 }
 
 type ShipperBidParam struct {
