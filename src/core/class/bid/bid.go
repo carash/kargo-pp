@@ -28,5 +28,5 @@ type Vehicle struct {
 }
 
 func (v Vehicle) Less(o Vehicle) bool {
-	return true
+	return v.Name < o.Name
 }
