@@ -18,5 +18,5 @@ func main() {
 	r.GET("/job", kargohndl.HandleGetJob)
 	r.GET("/bid", kargohndl.HandleGetBid)
 
-	r.Run("1234")
+	r.Run(":1234")
 }
