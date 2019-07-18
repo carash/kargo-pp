@@ -18,6 +18,7 @@ Stubs to Create
 ### Test
 
 Create tests (with negative test case?)
+- [ ] Entities w/ functions
 - [ ] Handler
 - [ ] Controller
 - [ ] Sort util
@@ -26,6 +27,7 @@ Create tests (with negative test case?)
 ### Implement
 
 Implement stubs according to tests
+- [ ] Entities w/ functions
 - [ ] Router
 - [ ] Handler
 - [ ] Controller
