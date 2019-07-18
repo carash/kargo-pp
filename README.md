@@ -27,9 +27,9 @@ Create tests (with negative test case?)
 ### Implement
 
 Implement stubs according to tests
-- [ ] Entities w/ functions
-- [ ] Router
-- [ ] Handler
-- [ ] Controller
-- [ ] Sort util
-- [ ] SQL Wrapper (dummy only)
+- [x] Entities w/ functions
+- [x] Router
+- [x] Handler
+- [x] Controller
+- [x] Sort util
+- [x] SQL Wrapper (dummy only)
