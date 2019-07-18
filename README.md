@@ -21,7 +21,7 @@ Create tests (with negative test case?)
 - [x] Entities w/ functions
 <!-- - [ ] Handler -->
 <!-- - [ ] Controller -->
-- [ ] Sort util
+- [x] Sort util
 <!-- - [ ] SQL Wrapper -->
 
 ### Implement
