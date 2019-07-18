@@ -10,23 +10,18 @@ type Kargo struct {
 	SQLConn *kargosql.KargoSQL
 }
 
-type ShipperBidParam struct {
+type BidParam struct {
+	UserID int
 }
 
-func (k *Kargo) ShipperGetBid(param ShipperBidParam) ([]bid.Bid, error) {
+func (k *Kargo) GetBid(param BidParam) ([]bid.Bid, error) {
 	return nil, nil
 }
 
-type ShipperJobParam struct {
+type JobParam struct {
+	UserID int
 }
 
-func (k *Kargo) ShipperGetJob(param ShipperJobParam) ([]job.Job, error) {
-	return nil, nil
-}
-
-type TransporterJobParam struct {
-}
-
-func (k *Kargo) TransporterGetJob(param TransporterJobParam) ([]job.Job, error) {
+func (k *Kargo) GetJob(param JobParam) ([]job.Job, error) {
 	return nil, nil
 }
