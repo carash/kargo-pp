@@ -14,11 +14,11 @@ type Bid struct {
 }
 
 func (b Bid) LessVehicle(o Bid) bool {
-	return true
+	return b.Vehicle.Less(*o.Vehicle)
 }
 
 func (b Bid) LessPrice(o Bid) bool {
-	return true
+	return b.Price < o.Price
 }
 
 type Vehicle struct {
