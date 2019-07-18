@@ -1,15 +1,13 @@
 package user
 
 type User struct {
-}
-
-func (b User) Less(o User) bool {
-	return true
+	ID   int
+	Name string
+	Role []*Role
 }
 
 type Role struct {
-}
-
-func (v Role) Less(o Role) bool {
-	return true
+	ID   int
+	Name string
+	Code string
 }
