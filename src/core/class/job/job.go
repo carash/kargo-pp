@@ -16,20 +16,20 @@ type Job struct {
 	Description string
 }
 
-func (b Job) LessOrigin(o Job) bool {
-	return true
+func (j Job) LessOrigin(o Job) bool {
+	return j.Origin.Less(*o.Origin)
 }
 
-func (b Job) LessDest(o Job) bool {
-	return true
+func (j Job) LessDest(o Job) bool {
+	return j.Dest.Less(*o.Dest)
 }
 
-func (b Job) LessBudget(o Job) bool {
-	return true
+func (j Job) LessBudget(o Job) bool {
+	return j.Budget < o.Budget
 }
 
-func (b Job) LessShipment(o Job) bool {
-	return true
+func (j Job) LessShipment(o Job) bool {
+	return j.Shipment.Before(o.Shipment)
 }
 
 type Location struct {
