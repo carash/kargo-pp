@@ -53,7 +53,17 @@ func (k *KargoHandler) HandleGetJob(c *gin.Context) {
 		return
 	}
 
-	j, err := k.KargoController.GetJob(kargo.JobParam{UserID: uid})
+	param := kargo.JobParam{UserID: uid}
+
+	sortBy := c.Query("sort_by")
+	switch sortBy {
+	case "vehicle", "price":
+		param.SortBy = sortBy
+	default:
+		param.SortBy = "price"
+	}
+
+	j, err := k.KargoController.GetJob(param)
 	if err != nil {
 		statusCode = http.StatusInternalServerError
 		errcode = 3
@@ -103,7 +113,17 @@ func (k *KargoHandler) HandleGetBid(c *gin.Context) {
 		return
 	}
 
-	b, err := k.KargoController.GetBid(kargo.BidParam{UserID: uid})
+	param := kargo.BidParam{UserID: uid}
+
+	sortBy := c.Query("sort_by")
+	switch sortBy {
+	case "origin", "destination", "budget", "shipment":
+		param.SortBy = sortBy
+	default:
+		param.SortBy = "shipment"
+	}
+
+	b, err := k.KargoController.GetBid(param)
 	if err != nil {
 		statusCode = http.StatusInternalServerError
 		errcode = 3
