@@ -57,10 +57,10 @@ func (k *KargoHandler) HandleGetJob(c *gin.Context) {
 
 	sortBy := c.Query("sort_by")
 	switch sortBy {
-	case "vehicle", "price":
+	case "origin", "destination", "budget", "shipment":
 		param.SortBy = sortBy
 	default:
-		param.SortBy = "price"
+		param.SortBy = "shipment"
 	}
 
 	j, err := k.KargoController.GetJob(param)
@@ -117,10 +117,10 @@ func (k *KargoHandler) HandleGetBid(c *gin.Context) {
 
 	sortBy := c.Query("sort_by")
 	switch sortBy {
-	case "origin", "destination", "budget", "shipment":
+	case "vehicle", "price":
 		param.SortBy = sortBy
 	default:
-		param.SortBy = "shipment"
+		param.SortBy = "price"
 	}
 
 	b, err := k.KargoController.GetBid(param)
