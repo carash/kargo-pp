@@ -13,7 +13,11 @@ type Bid struct {
 	Vehicle *Vehicle
 }
 
-func (b Bid) Less(o Bid) bool {
+func (b Bid) LessVehicle(o Bid) bool {
+	return true
+}
+
+func (b Bid) LessPrice(o Bid) bool {
 	return true
 }
 
