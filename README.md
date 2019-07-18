@@ -19,10 +19,10 @@ Stubs to Create
 
 Create tests (with negative test case?)
 - [x] Entities w/ functions
-- [ ] Handler
-- [ ] Controller
+<!-- - [ ] Handler -->
+<!-- - [ ] Controller -->
 - [ ] Sort util
-- [ ] SQL Wrapper
+<!-- - [ ] SQL Wrapper -->
 
 ### Implement
 
